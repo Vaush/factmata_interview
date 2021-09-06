@@ -109,7 +109,6 @@ def lambda_handler(event, context):
         scores = thread_pool_execute(inputs, thread_handler, threadpool_size)
         monitoring_object["readable_links"] = counter
     except Exception as e:
-        raise e
         error = str(type(e))
         monitoring_object["error_message"] = str(e)
     try:
